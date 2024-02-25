@@ -208,7 +208,7 @@ chrome.storage.local.get("config", (c) => {
       // region header background
       if (config["background"] !== "disabled") {
         document.querySelector(
-          "#awsc-navigation__more-menu--list"
+          "#awsc-navigation-container>div>header>nav"
         ).style.background = colors[region]["background"];
       }
 
