@@ -32,11 +32,7 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": [
-        "flags/*.png",
-        "svcs/*.svg",
-        "svcs/*.ico"
-      ],
+      "resources": [],
       "matches": [
         "*://*.console.aws.amazon.com/*"
       ]
