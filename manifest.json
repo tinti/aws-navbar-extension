@@ -30,12 +30,5 @@
       ]
     }
   ],
-  "web_accessible_resources": [
-    {
-      "resources": [],
-      "matches": [
-        "*://*.console.aws.amazon.com/*"
-      ]
-    }
-  ]
+  "web_accessible_resources": []
 }
