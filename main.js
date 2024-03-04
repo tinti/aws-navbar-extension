@@ -169,11 +169,11 @@ chrome.storage.local.get("config", (c) => {
   if (isDebug) console.log(`config: ${JSON.stringify(config, null, 2)}`);
 
   waitForSelector(
-    '[data-testid="more-menu__awsc-nav-regions-menu-button"]>span'
+    '[data-testid="more-menu__awsc-nav-regions-menu-button"]>span',
   ).then((element) => {
     // city
     let city = document.querySelector(
-      '[data-testid="more-menu__awsc-nav-regions-menu-button"]>span'
+      '[data-testid="more-menu__awsc-nav-regions-menu-button"]>span',
     ).innerText;
 
     // lang
@@ -208,23 +208,23 @@ chrome.storage.local.get("config", (c) => {
       // region header background
       if (config["background"] !== "disabled") {
         document.querySelector(
-          "#awsc-navigation-container>div>header>nav"
+          "#awsc-navigation-container>div>header>nav",
         ).style.background = colors[region]["background"];
       }
 
       // region flag
       if (config["flag"] !== "disabled") {
         const flag = chrome.runtime.getURL(
-          `flags/${colors[region]["country"]}.png`
+          `flags/${colors[region]["country"]}.png`,
         );
 
         const region_info = document.querySelector(
-          '[data-testid="more-menu__awsc-nav-regions-menu-button"]'
+          '[data-testid="more-menu__awsc-nav-regions-menu-button"]',
         );
 
         region_info.children[0].insertAdjacentHTML(
           "beforeBegin",
-          `<span style="font-size:1.4em;margin-right:0.6em;">${colors[region]["emoji"]}</span>`
+          `<span style="font-size:1.4em;margin-right:0.6em;">${colors[region]["emoji"]}</span>`,
         );
       }
     }
@@ -234,7 +234,7 @@ chrome.storage.local.get("config", (c) => {
     (element) => {
       // account_id
       const account_menu = document.querySelector(
-        "div[data-testid=account-detail-menu]>div>div"
+        "div[data-testid=account-detail-menu]>div>div",
       );
 
       const account_id = account_menu.children[1].innerText.replaceAll("-", "");
@@ -249,9 +249,9 @@ chrome.storage.local.get("config", (c) => {
           .querySelector('[data-testid="awsc-nav-account-menu-button"]')
           .insertAdjacentHTML(
             "beforeBegin",
-            `<span style="font-size:1.4em;margin-right:0.6em;">${config["info"][account_id]}</span>`
+            `<span style="font-size:1.4em;margin-right:0.6em;">${config["info"][account_id]}</span>`,
           );
       }
-    }
+    },
   );
 });
